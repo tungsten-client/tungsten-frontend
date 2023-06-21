@@ -61,7 +61,7 @@ h1 {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  backdrop-filter: blur(0.1px); /* Apply blur to the banner */
+  backdrop-filter: blur(10.1px); /* Apply blur to the banner */
 }
 
 #comingSoonBanner h2 {
