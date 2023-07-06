@@ -257,25 +257,3 @@ body{
 		background-position: left 1000px top 0;
 	}
 }
-@keyframes glitch-effect {
-  0%{
-    left: -2px;
-    top: -2px;
-  }
-  25%{
-    left: 2px;
-    top: 0px;
-  }
-  50%{
-    left: -1px;
-    top: 2px;
-  }
-  75%{
-    left: 1px;
-    top: -1px;
-  }
-  100%{
-    left: 0px;
-    top: -2px;
-  }
-}
