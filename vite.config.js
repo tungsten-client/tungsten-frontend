@@ -11,7 +11,7 @@ export default defineConfig({
     postcss,
   },
   plugins: [react()],
-  base: '/tungesten-frontend/',
+  base: '/',
   resolve: {
     alias: [
       {
