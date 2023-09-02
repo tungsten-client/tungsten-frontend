@@ -1,23 +1,56 @@
-import React from 'react'
+import React from "react";
 
-const DonoCard = ({name, address, qrcode}) => {
+const DonoCard = ({ name, address, delay }) => {
+  let timeoutId;
+
+  // fuck please dont look at this
+  const handleCope = () => {
+    if (timeoutId) return;
+
+    navigator.clipboard.writeText(address);
+
+    const btn = document.getElementById(`addressCopyBtn::${name}`);
+
+    btn.classList.add("text-green-500");
+    btn.classList.remove("hover:text-white", "hover:border-white");
+    btn.innerText = "Copied";
+
+    timeoutId = setTimeout(() => {
+      btn.classList.remove("text-green-500");
+      btn.classList.add("hover:text-white", "hover:border-white");
+      btn.innerText = address;
+
+      timeoutId = null;
+    }, 1000);
+  };
+
   return (
-    <div data-aos="fade-up" data-aos-delay="400">
-        <div className="max-w-sm rounded overflow-hidden shadow-lg bg-slate-800">
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{name}</div>
-                    <p className="text-gray-400 text-base break-words">
-                        {address}
-                    </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-gray-200 rounded px-3 py-3 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    <img className='h-32 w-32' src={qrcode}/>
-                </span>
-            </div>
-        </div>
-    </div>
-  )
-}
+    <div
+      className="w-[50%] md:w-full p-4 transition duration-300 border-2 rounded-md h-fit hover:brightness-110 bg-slate-800 border-slate-700/50"
+      data-aos="fade-up"
+      data-aos-delay={delay}
+    >
+      <div className="mx-auto">
+        <p className="text-xl font-bold">{name}</p>
 
-export default DonoCard
+        <button
+          disabled={!!timeoutId}
+          id={`addressCopyBtn::${name}`}
+          title={`Copy ${address}`}
+          className="max-w-[75%] truncate hover:text-white transition-all duration-750 border-b-2 border-transparent hover:border-white"
+          onClick={handleCope}
+        >
+          {address}
+        </button>
+      </div>
+      <img
+        draggable={false}
+        className="w-40 mx-auto mt-4 select-none aspect-square"
+        src={`/qrcodes/${name.toLowerCase()}.svg`}
+      />
+    </div>
+  );
+};
+
+export default DonoCard;
+
