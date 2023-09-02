@@ -12,7 +12,7 @@ const DonoCard = ({name, address, qrcode}) => {
             </div>
             <div className="px-6 pt-4 pb-2">
                 <span className="inline-block bg-gray-200 rounded px-3 py-3 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    <img src={qrcode}/>
+                    <img className='h-32 w-32' src={qrcode}/>
                 </span>
             </div>
         </div>

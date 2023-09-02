@@ -45,7 +45,7 @@ const DonationBox = () => {
                 <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
                     Donate to help fund the project
                 </p>
-                <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center space-x-10">
+                <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center space-x-10 ">
                     <DonoCard name="Bitcoin" address="bc1qu5jg62yld3xz2dmqp5mwrsgp9hckv7f65m7ymz" qrcode={BitcoinImg}/>
                     <DonoCard name="Ethereum" address="0xDBee7D682752F51C73bFdBD22BaB0Fe5aE84e6A9" qrcode={EthereumImg}/>
                     <DonoCard name="Litecoin" address="LYEB3pM31cCz4C2jiiARZJNjbfCUGNhiFe" qrcode={LitecoinImg}/>
