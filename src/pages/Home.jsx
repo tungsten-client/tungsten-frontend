@@ -6,6 +6,8 @@ import HeroHome from '../partials/HeroHome';
 import FeaturesZigZag from '../partials/FeaturesZigzag';
 import Banner from '../partials/Banner';
 import Footer from '../partials/Footer';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
   return (
