@@ -4,6 +4,7 @@ import DonoCard from './DonoCard';
 import BitcoinImg from '../images/Bitcoin.png';
 import LitecoinImg from '../images/Litecoin.png';
 import EthereumImg from '../images/Ethereum.png';
+import MoneroImg from '../images/Monero.png';
 
 
 
@@ -48,6 +49,7 @@ const DonationBox = () => {
                     <DonoCard name="Bitcoin" address="bc1qu5jg62yld3xz2dmqp5mwrsgp9hckv7f65m7ymz" qrcode={BitcoinImg}/>
                     <DonoCard name="Ethereum" address="0xDBee7D682752F51C73bFdBD22BaB0Fe5aE84e6A9" qrcode={EthereumImg}/>
                     <DonoCard name="Litecoin" address="LYEB3pM31cCz4C2jiiARZJNjbfCUGNhiFe" qrcode={LitecoinImg}/>
+                    <DonoCard name="Monero" address="4AvktjG9d718poxq7MshnRLmcu1xvdeLnQ4TWhxTjvxDC9XrV4ULe8AgGb8qqGHNNTSNcrVnR5hbaaJfQ2ZSsEK2BeZRTiy" qrcode={MoneroImg}/>
                 </div>
             </div>
         </div>
