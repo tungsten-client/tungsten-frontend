@@ -36,7 +36,6 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path= "/donation" element={<Donation />} />
@@ -44,7 +43,6 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
-    </>
   );
 }
 
