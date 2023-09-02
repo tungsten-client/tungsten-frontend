@@ -21,6 +21,7 @@ function Home() {
         </div>
 
         {/*  Page sections */}
+        {/* TODO: change this backto hero and zigzag... then update them to refelct the client */}
         <section>
           <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
             {/* Illustration behind hero content */}
