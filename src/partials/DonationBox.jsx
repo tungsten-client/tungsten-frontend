@@ -4,7 +4,7 @@ import DonoCard from './DonoCard';
 import BitcoinImg from '../images/Bitcoin.png';
 import LitecoinImg from '../images/Litecoin.png';
 import EthereumImg from '../images/Ethereum.png';
-import MoneroImg from '../images/Monero.png';
+import MoneroImg from '../images/monero.png';
 
 
 
