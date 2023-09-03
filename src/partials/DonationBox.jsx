@@ -1,29 +1,64 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from "react";
 
-import DonoCard from './DonoCard';
-import BitcoinImg from '../images/Bitcoin.png';
-import LitecoinImg from '../images/Litecoin.png';
-import EthereumImg from '../images/Ethereum.png';
-import MoneroImg from '../images/monero.png';
+import DonoCard from "./DonoCard";
 
-
+const donationLocations = [
+  {
+    name: "Bitcoin",
+    address: "bc1qu5jg62yld3xz2dmqp5mwrsgp9hckv7f65m7ymz",
+  },
+  {
+    name: "Ethereum",
+    address: "0xDBee7D682752F51C73bFdBD22BaB0Fe5aE84e6A9",
+  },
+  {
+    name: "Litecoin",
+    address: "LYEB3pM31cCz4C2jiiARZJNjbfCUGNhiFe",
+  },
+  {
+    name: "Monero",
+    address:
+      "4AvktjG9d718poxq7MshnRLmcu1xvdeLnQ4TWhxTjvxDC9XrV4ULe8AgGb8qqGHNNTSNcrVnR5hbaaJfQ2ZSsEK2BeZRTiy",
+  },
+];
 
 const DonationBox = () => {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+      <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
         {/* Illustration behind hero content */}
         <div
-          className="absolute left-0 bottom-0 -ml-20 hidden lg:block pointer-events-none"
+          className="absolute bottom-0 left-0 hidden -ml-20 pointer-events-none lg:block"
           aria-hidden="true"
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          <svg className="max-w-full" width="564" height="552" viewBox="0 0 564 552" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            className="max-w-full"
+            width="564"
+            height="552"
+            viewBox="0 0 564 552"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <defs>
-              <linearGradient id="illustration-02" x1="-3.766" y1="300.204" x2="284.352" y2="577.921" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#5D5DFF" stopOpacity=".01" />
-                <stop offset="1" stopColor="#5D5DFF" stopOpacity=".32" />
+              <linearGradient
+                id="illustration-02"
+                x1="-3.766"
+                y1="300.204"
+                x2="284.352"
+                y2="577.921"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop
+                  stopColor="#5D5DFF"
+                  stopOpacity=".01"
+                />
+                <stop
+                  offset="1"
+                  stopColor="#5D5DFF"
+                  stopOpacity=".32"
+                />
               </linearGradient>
             </defs>
             <path
@@ -36,26 +71,39 @@ const DonationBox = () => {
         </div>
 
         {/* Hero content */}
-        <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
+        <div className="relative pt-24 pb-10 md:pt-32 md:pb-16">
           {/* Section header */}
-            <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1 mb-4" data-aos="fade-up">
-                    Donation
-                </h1>
-                <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
-                    Donate to help fund the project
-                </p>
-                <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center space-x-10 ">
-                    <DonoCard name="Bitcoin" address="bc1qu5jg62yld3xz2dmqp5mwrsgp9hckv7f65m7ymz" qrcode={BitcoinImg}/>
-                    <DonoCard name="Ethereum" address="0xDBee7D682752F51C73bFdBD22BaB0Fe5aE84e6A9" qrcode={EthereumImg}/>
-                    <DonoCard name="Litecoin" address="LYEB3pM31cCz4C2jiiARZJNjbfCUGNhiFe" qrcode={LitecoinImg}/>
-                    <DonoCard name="Monero" address="4AvktjG9d718poxq7MshnRLmcu1xvdeLnQ4TWhxTjvxDC9XrV4ULe8AgGb8qqGHNNTSNcrVnR5hbaaJfQ2ZSsEK2BeZRTiy" qrcode={MoneroImg}/>
-                </div>
+          <div className="max-w-3xl pb-12 mx-auto text-center md:pb-16">
+            <h1
+              className=" h1"
+              data-aos="fade-up"
+            >
+              Donation
+            </h1>
+            <p
+              className="mb-8 text-xl text-gray-400"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Donate to help fund the project
+            </p>
+            <div className="grid justify-center w-full gap-2 px-16 md:grid-cols-2 place-items-center">
+              {donationLocations.map(({ address, name, qrcode }, k) => (
+                <DonoCard
+                  key={k}
+                  address={address}
+                  name={name}
+                  qrcode={qrcode}
+                  delay={k * 100}
+                />
+              ))}
             </div>
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default DonationBox
+export default DonationBox;
+
