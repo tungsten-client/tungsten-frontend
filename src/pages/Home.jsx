@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Header from '../partials/Header';
-import PageIllustration from '../partials/PageIllustration';
-import HeroHome from '../partials/HeroHome';
-import FeaturesZigZag from '../partials/FeaturesZigzag';
-import Banner from '../partials/Banner';
-import Footer from '../partials/Footer';
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import Banner from "../partials/Banner";
+import Header from "../partials/Header";
+import PageIllustration from "../partials/PageIllustration";
 
 function Home() {
   return (
@@ -18,26 +14,50 @@ function Home() {
       {/*  Page content */}
       <main className="grow">
         {/*  Page illustration */}
-        <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="relative h-0 max-w-6xl mx-auto pointer-events-none"
+          aria-hidden="true"
+        >
           <PageIllustration />
         </div>
 
         {/*  Page sections */}
         {/* TODO: change this backto hero and zigzag... then update them to refelct the client */}
         <section>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+          <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
             {/* Illustration behind hero content */}
             <div
-              className="absolute left-0 bottom-0 -ml-20 hidden lg:block pointer-events-none"
+              className="absolute bottom-0 left-0 hidden -ml-20 pointer-events-none lg:block"
               aria-hidden="true"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <svg className="max-w-full" width="564" height="552" viewBox="0 0 564 552" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="max-w-full"
+                width="564"
+                height="552"
+                viewBox="0 0 564 552"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <defs>
-                  <linearGradient id="illustration-02" x1="-3.766" y1="300.204" x2="284.352" y2="577.921" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#5D5DFF" stopOpacity=".01" />
-                    <stop offset="1" stopColor="#5D5DFF" stopOpacity=".32" />
+                  <linearGradient
+                    id="illustration-02"
+                    x1="-3.766"
+                    y1="300.204"
+                    x2="284.352"
+                    y2="577.921"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop
+                      stopColor="#5D5DFF"
+                      stopOpacity=".01"
+                    />
+                    <stop
+                      offset="1"
+                      stopColor="#5D5DFF"
+                      stopOpacity=".32"
+                    />
                   </linearGradient>
                 </defs>
                 <path
@@ -52,24 +72,38 @@ function Home() {
             {/* Hero content */}
             <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
               {/* Section header */}
-              <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1 mb-4" data-aos="fade-up">
+              <div className="max-w-3xl pb-12 mx-auto text-center md:pb-16">
+                <h1
+                  className="mb-4 h1"
+                  data-aos="fade-up"
+                >
                   Tungsten Client
                 </h1>
-                <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
+                <p
+                  className="mb-8 text-xl text-gray-400"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
                   Check back later!
                 </p>
                 <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-                  <div data-aos="fade-up" data-aos-delay="400">
-                    <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0">
-                    <Link to="/signup">Sign Up</Link>
-                    </a>
-                  </div>
-                  <div data-aos="fade-up" data-aos-delay="600">
-                    <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4">
-                      <Link to="/donation">Donate</Link>
-                    </a>
-                  </div>
+                  <Link
+                    className="w-full mb-4 text-white bg-purple-600 btn hover:bg-purple-700 sm:w-auto sm:mb-0"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                    to="/signup"
+                  >
+                    Sign Up
+                  </Link>
+
+                  <Link
+                    className="w-full text-white bg-gray-700 btn hover:bg-gray-800 sm:w-auto sm:ml-4"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                    to="/donation"
+                  >
+                    Donate
+                  </Link>
                 </div>
               </div>
             </div>
@@ -85,3 +119,4 @@ function Home() {
 }
 
 export default Home;
+
