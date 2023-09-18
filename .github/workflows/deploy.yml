@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Handle GH Pages 404 shit
+      - name: Handle GH Pages 404 bug
         run: cp ./dist/index.html ./dist/404.html
 
       - name: Upload production-ready build files
