@@ -2,40 +2,43 @@ import Layout from "../Layout";
 
 import { Link } from "react-router-dom";
 
-export function NotFound() {
-  return (
-    // we have to include the layout here cause react's router shits itself as usual
-    <Layout>
-      <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
-        <div className="max-w-3xl pb-12 mx-auto text-center md:pb-16">
-          <h1
-            className="mb-4 h1"
-            data-aos="fade-up"
-          >
-            404 - Page Not Found
+export const NotFound = () => (
+  <Layout>
+    <div className="w-full h-screen pt-32 pb-10 md:pt-40 md:pb-16">
+      <div className="container flex flex-col items-center justify-center h-full mx-auto text-center gap-y-8">
+        <div className="flex flex-col items-center">
+          <h1 className="flex w-full text-6xl font-bold text-white opacity-75 justify-evenly md:text-8xl">
+            <span>4</span>
+            <span>0</span>
+            <span>4</span>
           </h1>
-          <p
-            className="mb-8 text-xl text-gray-400"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            The page you are looking for could not be found.
+          <p className="-mt-4 text-4xl font-bold with-indigo-gradient">
+            Page not found...
           </p>
-          <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-            <Link
-              className="w-full mb-4 text-white bg-purple-600 btn hover:bg-purple-700 sm:w-auto sm:mb-0"
-              data-aos="fade-up"
-              data-aos-delay="400"
-              to="/"
+        </div>
+
+        <div className="flex flex-col items-center text-indigo-300 gap-y-2">
+          <p>We couldn't find the page you were looking for.</p>
+          <Link
+            to="/"
+            className="flex items-center justify-between py-2 pl-4 pr-1 text-sm font-semibold transition border-2 rounded-full group duration-400 hover:bg-indigo-700/25 hover:border-indigo-700 border-indigo-700/75 bg-indigo-600/10 gap-x-4 w-fit"
+          >
+            Go Home
+            <svg
+              className="w-6 h-6 fill-current"
+              viewBox="0 0 24 24"
             >
-              Homepage
-            </Link>
-          </div>
+              <path
+                fill="currentColor"
+                d="M9.29 6.71a.996.996 0 0 0 0 1.41L13.17 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
-    </Layout>
-  );
-}
+    </div>
+  </Layout>
+);
 
 export default NotFound;
 
