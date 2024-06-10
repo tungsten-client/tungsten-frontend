@@ -17,7 +17,7 @@ function Banner() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="hidden sm:inline"> Discord </span>
+                <span className="sm:inline"> Discord </span>
               </a>{' '}
               &nbsp;to stay up to date
             </div>
