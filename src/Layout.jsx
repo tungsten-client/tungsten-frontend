@@ -6,7 +6,7 @@ import Header from "./partials/Header";
 import Banner from "./partials/Banner";
 import PageIllustration from "./partials/PageIllustration";
 
-export function Layout() {
+export function Layout({children}) {
   useEffect(() => {
     AOS.init({
       once: true,
@@ -39,7 +39,9 @@ export function Layout() {
           <PageIllustration />
         </div>
 
-        <Outlet />
+        {children} 
+        {!children && <Outlet />}
+        
       </main>
 
       <Banner />

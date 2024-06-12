@@ -15,12 +15,14 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 
 import Layout from "./Layout";
+import NotFound from "./partials/404";
 
 const router = createBrowserRouter([
   {
     id: "root",
     path: "/",
     Component: Layout,
+    errorElement: <NotFound />,
     children: [
       {
         index: true,
